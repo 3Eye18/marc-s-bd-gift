@@ -1,10 +1,10 @@
 [gd_scene load_steps=41 format=3 uid="uid://c0oy0i2kmd5m2"]
 
-[ext_resource type="Script" path="res://clover.gd" id="1_mqv6t"]
-[ext_resource type="Texture2D" uid="uid://bwivokppevvhk" path="res://PC Computer - Undertale Yellow - Clover.png" id="2_le3tj"]
+[ext_resource type="Script" path="res://Script/clover.gd" id="1_mqv6t"]
+[ext_resource type="Texture2D" uid="uid://bwivokppevvhk" path="res://Asset/PC Computer - Undertale Yellow - Clover.png" id="2_le3tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyim4"]
-size = Vector2(71, 42)
+size = Vector2(72, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tf5fi"]
 atlas = ExtResource("2_le3tj")
@@ -303,16 +303,17 @@ animations = [{
 
 [node name="Clover" type="CharacterBody2D"]
 script = ExtResource("1_mqv6t")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 41)
+position = Vector2(0, 42)
 shape = SubResource("RectangleShape2D_xyim4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_dvv2t")
-animation = &"down_sprint"
+animation = &"down_walk"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 12.015)

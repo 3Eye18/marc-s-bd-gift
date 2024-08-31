@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b02m3356qqdby"
-path="res://.godot/imported/PC Computer - Undertale Yellow - Soul.png-1d0f043b58f878cfe57447a180e56186.ctex"
+uid="uid://uv27siec4bbe"
+path="res://.godot/imported/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png-ccaa7c051a4b262b2b3796249d1379eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PC Computer - Undertale Yellow - Soul.png"
-dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Soul.png-1d0f043b58f878cfe57447a180e56186.ctex"]
+source_file="res://Asset/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png"
+dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png-ccaa7c051a4b262b2b3796249d1379eb.ctex"]
 
 [params]
 

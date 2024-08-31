@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://devt4c2gjdn46"
-path="res://.godot/imported/PC Computer - Undertale Yellow - Health Bar.png-34cbf270b30cccdb32e01b46447fc204.ctex"
+uid="uid://b56m40gp0ebih"
+path="res://.godot/imported/PC Computer - Undertale Yellow - Ace.png-1725b78c8a846fbde0398776a3254777.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PC Computer - Undertale Yellow - Health Bar.png"
-dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Health Bar.png-34cbf270b30cccdb32e01b46447fc204.ctex"]
+source_file="res://Asset/PC Computer - Undertale Yellow - Ace.png"
+dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Ace.png-1725b78c8a846fbde0398776a3254777.ctex"]
 
 [params]
 

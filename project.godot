@@ -11,8 +11,21 @@ config_version=5
 [application]
 
 config/name="Marc's BD Gift"
+run/main_scene="res://Scene/main_game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/resizable=false
+
+[file_customization]
+
+folder_colors={
+"res://Asset/": "red",
+"res://Scene/": "green",
+"res://Script/": "yellow"
+}
 
 [input]
 
@@ -56,3 +69,4 @@ interact={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

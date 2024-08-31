@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf3ot4v5er7ev"
-path="res://.godot/imported/PC Computer - Undertale Yellow - Attacks.png-d0d6c9af3c76fb45a61ae595f26b587d.ctex"
+uid="uid://b02m3356qqdby"
+path="res://.godot/imported/PC Computer - Undertale Yellow - Soul.png-9102e169cbc111f2d0379bbb62537fcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PC Computer - Undertale Yellow - Attacks.png"
-dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Attacks.png-d0d6c9af3c76fb45a61ae595f26b587d.ctex"]
+source_file="res://Asset/PC Computer - Undertale Yellow - Soul.png"
+dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Soul.png-9102e169cbc111f2d0379bbb62537fcb.ctex"]
 
 [params]
 

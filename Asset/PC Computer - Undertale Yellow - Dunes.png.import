@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkc6krpxiwhju"
-path="res://.godot/imported/PC Computer - Undertale Yellow - Battle Buttons.png-5fec778ddc5ecdb334933f2d90aff03e.ctex"
+uid="uid://blnlvacp6sfkm"
+path="res://.godot/imported/PC Computer - Undertale Yellow - Dunes.png-04a134b8527d3fa511d994239b643e4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PC Computer - Undertale Yellow - Battle Buttons.png"
-dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Battle Buttons.png-5fec778ddc5ecdb334933f2d90aff03e.ctex"]
+source_file="res://Asset/PC Computer - Undertale Yellow - Dunes.png"
+dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Dunes.png-04a134b8527d3fa511d994239b643e4b.ctex"]
 
 [params]
 

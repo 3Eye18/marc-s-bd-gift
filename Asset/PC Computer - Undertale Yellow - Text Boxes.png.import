@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blnlvacp6sfkm"
-path="res://.godot/imported/PC Computer - Undertale Yellow - Dunes.png-5e3710654941e8930fc28c5df078ba95.ctex"
+uid="uid://ipglkwaspv2p"
+path="res://.godot/imported/PC Computer - Undertale Yellow - Text Boxes.png-1093c3bf460b9ec61bae9ca3580b5322.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PC Computer - Undertale Yellow - Dunes.png"
-dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Dunes.png-5e3710654941e8930fc28c5df078ba95.ctex"]
+source_file="res://Asset/PC Computer - Undertale Yellow - Text Boxes.png"
+dest_files=["res://.godot/imported/PC Computer - Undertale Yellow - Text Boxes.png-1093c3bf460b9ec61bae9ca3580b5322.ctex"]
 
 [params]
 
