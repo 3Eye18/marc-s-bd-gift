@@ -8,12 +8,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sprite_handling()
+	pass
+	#sprite_handling($Clover/CollisionShape2D)
+	#sprite_handling($NPCs/Martlet/CollisionShape2D)
 
 
-func sprite_handling():
-	var player_collision_box = $Clover/CollisionShape2D
-	var player_bottom = player_collision_box.global_position.y + player_collision_box.shape.size.y / 2
+func sprite_handling(character_collision_box):
+	var character_bottom = character_collision_box.global_position.y + character_collision_box.shape.size.y / 2
 	
 	var child_count = $House/Furnitures.get_child_count()
 	for i in child_count:
@@ -22,7 +23,7 @@ func sprite_handling():
 			var child_collision_box = child.get_node("CollisionShape2D")
 			var child_top = child_collision_box.global_position.y - child_collision_box.shape.size.y * 4 /2
 			
-			if player_bottom < child_top:
-				child.z_index = 1
+			if character_bottom < child_top:
+				child.z_index = 2
 			else:
 				child.z_index = 0

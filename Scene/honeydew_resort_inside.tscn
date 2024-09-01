@@ -1,31 +1,14 @@
-[gd_scene load_steps=35 format=3 uid="uid://dbuiwa8lfrgct"]
+[gd_scene load_steps=36 format=3 uid="uid://dbuiwa8lfrgct"]
 
 [ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/clover.tscn" id="1_2t7be"]
 [ext_resource type="Script" path="res://Script/honeydew_resort_inside.gd" id="1_rrj3b"]
 [ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/PC Computer - Undertale Yellow - Snowdin.png" id="1_shnrq"]
 [ext_resource type="Texture2D" uid="uid://uv27siec4bbe" path="res://Asset/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png" id="3_iwvns"]
+[ext_resource type="PackedScene" uid="uid://c6w05bdcntc8a" path="res://Scene/martlet.tscn" id="4_f0gv5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn5rn"]
 atlas = ExtResource("1_shnrq")
 region = Rect2(2004, 532, 428, 500)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2l2a"]
-size = Vector2(208, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eogvv"]
-size = Vector2(92, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x538i"]
-size = Vector2(92, 20.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmpi4"]
-size = Vector2(42, 366)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfw1p"]
-size = Vector2(42, 366)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs0b"]
-size = Vector2(61, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67rm7"]
 atlas = ExtResource("1_shnrq")
@@ -105,20 +88,249 @@ region = Rect2(2461, 133, 21, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ps2"]
 size = Vector2(21, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2l2a"]
+size = Vector2(208, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eogvv"]
+size = Vector2(92, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x538i"]
+size = Vector2(92, 20.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmpi4"]
+size = Vector2(42, 366)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfw1p"]
+size = Vector2(42, 366)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs0b"]
+size = Vector2(61, 160)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj5jv"]
 atlas = ExtResource("3_iwvns")
 region = Rect2(355, 103, 17, 41)
 
-[node name="Honeydew Resort Inside" type="Node"]
+[node name="Honeydew Resort Inside" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(0, 55)
 script = ExtResource("1_rrj3b")
 
 [node name="House" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
-position = Vector2(32, -840)
+position = Vector2(32, -4440)
 scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_wn5rn")
+offset = Vector2(0, 900)
+
+[node name="Furnitures" type="Node2D" parent="House"]
+y_sort_enabled = true
+position = Vector2(0, 900)
+
+[node name="Table1" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(29.5, -31)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table1"]
+texture = SubResource("AtlasTexture_67rm7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Table1"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_qv6ll")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Table2" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-85.5, -31)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table2"]
+texture_filter = 1
+texture = SubResource("AtlasTexture_b7xhw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Table2"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_45r64")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Table3" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-109.5, 159)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table3"]
+texture = SubResource("AtlasTexture_ljdws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Table3"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_45r64")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Shop" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(135.5, 40.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Shop"]
+texture = SubResource("AtlasTexture_i6xmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Shop"]
+position = Vector2(0, 1.125)
+shape = SubResource("RectangleShape2D_iiqd1")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Stool1" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(83.5, -8)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Stool1"]
+texture = SubResource("AtlasTexture_1263l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Stool1"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5oxei")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Stool2" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(83.5, 69)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Stool2"]
+texture = SubResource("AtlasTexture_1263l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Stool2"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5oxei")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Stool3" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(83.5, 109)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Stool3"]
+texture = SubResource("AtlasTexture_1263l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Stool3"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_5oxei")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Rug" type="Sprite2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(0, 18)
+texture = SubResource("AtlasTexture_jva43")
+offset = Vector2(0, 40)
+
+[node name="Heater" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(0, 41.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Heater"]
+texture = SubResource("AtlasTexture_0pjax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Heater"]
+position = Vector2(0.5, 13)
+shape = SubResource("RectangleShape2D_ml3lk")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Corner" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(104.5, 202)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Corner"]
+texture = SubResource("AtlasTexture_djhju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Corner"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_740qa")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Armchair" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-64, 49)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Armchair"]
+texture = SubResource("AtlasTexture_8jgbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Armchair"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_isswi")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Plant" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(160, -137.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Plant"]
+texture = SubResource("AtlasTexture_nmdhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Plant"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_grkg0")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Dispenser" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-102.5, -149.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Dispenser"]
+texture = SubResource("AtlasTexture_qbeft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Dispenser"]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_6l14h")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Twin Stool" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-159.5, -105.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Twin Stool"]
+texture = SubResource("AtlasTexture_o0jt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Twin Stool"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_k0ps2")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Twin Stool2" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-157.5, 54.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Twin Stool2"]
+texture = SubResource("AtlasTexture_o0jt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Twin Stool2"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_k0ps2")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Twin Stool3" type="StaticBody2D" parent="House/Furnitures"]
+y_sort_enabled = true
+position = Vector2(-149.5, 90.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Twin Stool3"]
+texture = SubResource("AtlasTexture_o0jt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Twin Stool3"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_k0ps2")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
 [node name="Walls" type="Node2D" parent="House"]
+position = Vector2(0, 900)
 
 [node name="Wall2" type="StaticBody2D" parent="House/Walls"]
 position = Vector2(-132.25, 235)
@@ -174,199 +386,19 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_xfs0b")
 debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
-[node name="Furnitures" type="Node2D" parent="House"]
+[node name="NPCs" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(32, -840)
+scale = Vector2(4, 4)
 
-[node name="Table1" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(29.5, -31)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table1"]
-texture = SubResource("AtlasTexture_67rm7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Table1"]
-position = Vector2(0, 6.5)
-shape = SubResource("RectangleShape2D_qv6ll")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Table2" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-85.5, -31)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table2"]
-texture_filter = 1
-texture = SubResource("AtlasTexture_b7xhw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Table2"]
-position = Vector2(0, 6.5)
-shape = SubResource("RectangleShape2D_45r64")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Table3" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-109.5, 159)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table3"]
-texture = SubResource("AtlasTexture_ljdws")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Table3"]
-position = Vector2(0, 6.5)
-shape = SubResource("RectangleShape2D_45r64")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Shop" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(135.5, 40.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Shop"]
-texture = SubResource("AtlasTexture_i6xmq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Shop"]
-position = Vector2(0, 1.125)
-shape = SubResource("RectangleShape2D_iiqd1")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Stool1" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(83.5, -8)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Stool1"]
-texture = SubResource("AtlasTexture_1263l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Stool1"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_5oxei")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Stool2" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(83.5, 69)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Stool2"]
-texture = SubResource("AtlasTexture_1263l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Stool2"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_5oxei")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Stool3" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(83.5, 109)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Stool3"]
-texture = SubResource("AtlasTexture_1263l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Stool3"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_5oxei")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Rug" type="Sprite2D" parent="House/Furnitures"]
-position = Vector2(0, 58)
-texture = SubResource("AtlasTexture_jva43")
-
-[node name="Heater" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(0, 41.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Heater"]
-texture = SubResource("AtlasTexture_0pjax")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Heater"]
-position = Vector2(0.5, 13)
-shape = SubResource("RectangleShape2D_ml3lk")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Corner" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(104.5, 202)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Corner"]
-texture = SubResource("AtlasTexture_djhju")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Corner"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_740qa")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Armchair" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-64, 49)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Armchair"]
-texture = SubResource("AtlasTexture_8jgbh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Armchair"]
-position = Vector2(0.5, 2.5)
-shape = SubResource("RectangleShape2D_isswi")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Plant" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(160, -137.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Plant"]
-texture = SubResource("AtlasTexture_nmdhu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Plant"]
-position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_grkg0")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Dispenser" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-102.5, -149.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Dispenser"]
-texture = SubResource("AtlasTexture_qbeft")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Dispenser"]
-position = Vector2(0, 12.5)
-shape = SubResource("RectangleShape2D_6l14h")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Twin Stool" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-159.5, -105.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Twin Stool"]
-texture = SubResource("AtlasTexture_o0jt8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Twin Stool"]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_k0ps2")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Twin Stool2" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-157.5, 54.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Twin Stool2"]
-texture = SubResource("AtlasTexture_o0jt8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Twin Stool2"]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_k0ps2")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="Twin Stool3" type="StaticBody2D" parent="House/Furnitures"]
-position = Vector2(-149.5, 90.5)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Twin Stool3"]
-texture = SubResource("AtlasTexture_o0jt8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Twin Stool3"]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_k0ps2")
-debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
-
-[node name="NPCs" type="Node2D" parent="House"]
+[node name="Shopkeeper" type="Sprite2D" parent="NPCs"]
 z_index = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="House/NPCs"]
+texture_filter = 1
 position = Vector2(127.5, 17.5)
 texture = SubResource("AtlasTexture_yj5jv")
 
+[node name="Martlet" parent="NPCs" instance=ExtResource("4_f0gv5")]
+position = Vector2(-150, -47.75)
+
 [node name="Clover" parent="." instance=ExtResource("1_2t7be")]
-position = Vector2(40, -24)
+position = Vector2(64, -439)

@@ -302,6 +302,7 @@ animations = [{
 }]
 
 [node name="Clover" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_mqv6t")
 metadata/_edit_group_ = true
 
