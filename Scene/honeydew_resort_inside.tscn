@@ -401,4 +401,4 @@ texture = SubResource("AtlasTexture_yj5jv")
 position = Vector2(-150, -47.75)
 
 [node name="Clover" parent="." instance=ExtResource("1_2t7be")]
-position = Vector2(64, -439)
+position = Vector2(32, -7)

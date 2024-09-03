@@ -307,11 +307,12 @@ script = ExtResource("1_mqv6t")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 42)
+position = Vector2(0, 38)
 shape = SubResource("RectangleShape2D_xyim4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -2)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_dvv2t")
 animation = &"down_walk"
