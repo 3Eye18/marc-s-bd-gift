@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dbuiwa8lfrgct"]
+[gd_scene load_steps=43 format=3 uid="uid://dbuiwa8lfrgct"]
 
 [ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/clover.tscn" id="1_2t7be"]
 [ext_resource type="Script" path="res://Script/honeydew_resort_inside.gd" id="1_rrj3b"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d1w32oo6s6ql3" path="res://Scene/ceroba.tscn" id="5_ui2ch"]
 [ext_resource type="PackedScene" uid="uid://c3op052tasysx" path="res://Scene/starlo.tscn" id="6_x7305"]
 [ext_resource type="PackedScene" uid="uid://bth1x8kh43nkr" path="res://Scene/dalv.tscn" id="7_itgny"]
+[ext_resource type="PackedScene" uid="uid://b7bh03o0iffxo" path="res://Scene/moray.tscn" id="8_vevx6"]
+[ext_resource type="PackedScene" uid="uid://css66f2p7oag6" path="res://Scene/mooch.tscn" id="9_84nxy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn5rn"]
 atlas = ExtResource("1_shnrq")
@@ -61,7 +63,7 @@ atlas = ExtResource("1_shnrq")
 region = Rect2(2585, 1498, 137, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_740qa"]
-size = Vector2(137, 40)
+size = Vector2(137, 42.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8jgbh"]
 atlas = ExtResource("1_shnrq")
@@ -91,8 +93,11 @@ region = Rect2(2461, 133, 21, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ps2"]
 size = Vector2(21, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn1tg"]
+size = Vector2(62, 3)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2l2a"]
-size = Vector2(208, 24)
+size = Vector2(141, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eogvv"]
 size = Vector2(92, 20)
@@ -108,6 +113,9 @@ size = Vector2(42, 366)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfs0b"]
 size = Vector2(61, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6gw"]
+size = Vector2(14, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj5jv"]
 atlas = ExtResource("3_iwvns")
@@ -224,9 +232,9 @@ debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
 [node name="Rug" type="Sprite2D" parent="House/Furnitures"]
 y_sort_enabled = true
-position = Vector2(0, 18)
+position = Vector2(0, -2)
 texture = SubResource("AtlasTexture_jva43")
-offset = Vector2(0, 40)
+offset = Vector2(0, 60)
 
 [node name="Heater" type="StaticBody2D" parent="House/Furnitures"]
 y_sort_enabled = true
@@ -250,7 +258,7 @@ metadata/_edit_group_ = true
 texture = SubResource("AtlasTexture_djhju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Furnitures/Corner"]
-position = Vector2(0, 4)
+position = Vector2(0, 5.125)
 shape = SubResource("RectangleShape2D_740qa")
 debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
@@ -335,12 +343,21 @@ debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 [node name="Walls" type="Node2D" parent="House"]
 position = Vector2(0, 900)
 
+[node name="Wall" type="StaticBody2D" parent="House/Walls"]
+position = Vector2(0, 241.7)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Walls/Wall"]
+position = Vector2(0, 7.05)
+shape = SubResource("RectangleShape2D_cn1tg")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
 [node name="Wall2" type="StaticBody2D" parent="House/Walls"]
 position = Vector2(-132.25, 235)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House/Walls/Wall2"]
-position = Vector2(64.25, 3)
+position = Vector2(30.75, 3)
 shape = SubResource("RectangleShape2D_x2l2a")
 debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
@@ -389,6 +406,15 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_xfs0b")
 debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
+[node name="Wall8" type="StaticBody2D" parent="House/Walls"]
+position = Vector2(42.11, 241.7)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Walls/Wall8"]
+position = Vector2(-4.11, -2.45)
+shape = SubResource("RectangleShape2D_ke6gw")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
 [node name="NPCs" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(32, -840)
@@ -414,6 +440,12 @@ position = Vector2(31, 70.25)
 [node name="Dalv" parent="NPCs" instance=ExtResource("7_itgny")]
 y_sort_enabled = true
 position = Vector2(-110, 124.25)
+
+[node name="Moray" parent="NPCs" instance=ExtResource("8_vevx6")]
+position = Vector2(3, -128.75)
+
+[node name="Mooch" parent="NPCs" instance=ExtResource("9_84nxy")]
+position = Vector2(47, -67.75)
 
 [node name="Clover" parent="." instance=ExtResource("1_2t7be")]
 position = Vector2(32, -7)

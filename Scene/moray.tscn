@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7bh03o0iffxo"]
+[gd_scene load_steps=7 format=3 uid="uid://b7bh03o0iffxo"]
 
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprite Cropped.png" id="1_bp3r1"]
+[ext_resource type="Script" path="res://Script/moray.gd" id="2_eyhuw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1tpcc"]
 atlas = ExtResource("1_bp3r1")
@@ -50,6 +51,7 @@ texture_filter = 1
 position = Vector2(8.79169e-07, 0)
 texture = SubResource("AtlasTexture_1tpcc")
 hframes = 7
+script = ExtResource("2_eyhuw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
