@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dbuiwa8lfrgct"]
+[gd_scene load_steps=45 format=3 uid="uid://dbuiwa8lfrgct"]
 
 [ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/clover.tscn" id="1_2t7be"]
 [ext_resource type="Script" path="res://Script/honeydew_resort_inside.gd" id="1_rrj3b"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bth1x8kh43nkr" path="res://Scene/dalv.tscn" id="7_itgny"]
 [ext_resource type="PackedScene" uid="uid://b7bh03o0iffxo" path="res://Scene/moray.tscn" id="8_vevx6"]
 [ext_resource type="PackedScene" uid="uid://css66f2p7oag6" path="res://Scene/mooch.tscn" id="9_84nxy"]
+[ext_resource type="PackedScene" uid="uid://by1fle6oyyejp" path="res://Scene/ed.tscn" id="10_qpy3c"]
+[ext_resource type="PackedScene" uid="uid://3whk6erka7of" path="res://Scene/ace.tscn" id="11_ktjsk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn5rn"]
 atlas = ExtResource("1_shnrq")
@@ -445,7 +447,13 @@ position = Vector2(-110, 124.25)
 position = Vector2(3, -128.75)
 
 [node name="Mooch" parent="NPCs" instance=ExtResource("9_84nxy")]
-position = Vector2(47, -67.75)
+position = Vector2(43, -66.75)
+
+[node name="Ed" parent="NPCs" instance=ExtResource("10_qpy3c")]
+position = Vector2(-85, -69.75)
+
+[node name="Ace" parent="NPCs" instance=ExtResource("11_ktjsk")]
+position = Vector2(16, -67.75)
 
 [node name="Clover" parent="." instance=ExtResource("1_2t7be")]
 position = Vector2(32, -7)

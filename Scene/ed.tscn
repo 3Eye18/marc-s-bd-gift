@@ -1,15 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://css66f2p7oag6"]
+[gd_scene load_steps=18 format=3 uid="uid://by1fle6oyyejp"]
 
-[ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprite Cropped.png" id="1_rrwb3"]
+[ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprite Cropped.png" id="1_wtfja"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d78nt"]
-atlas = ExtResource("1_rrwb3")
-region = Rect2(0, 742, 192, 180)
+[sub_resource type="AtlasTexture" id="AtlasTexture_30052"]
+atlas = ExtResource("1_wtfja")
+region = Rect2(0, 935, 396, 212)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnojb"]
-size = Vector2(28, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg552"]
+size = Vector2(64, 16)
 
-[sub_resource type="Animation" id="Animation_crtvj"]
+[sub_resource type="Animation" id="Animation_6hxqy"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_twpqj"]
+[sub_resource type="Animation" id="Animation_cf7kl"]
 resource_name = "idle_down"
 length = 0.25
 step = 0.25
@@ -41,7 +41,7 @@ tracks/0/keys = {
 "values": [4]
 }
 
-[sub_resource type="Animation" id="Animation_ax18v"]
+[sub_resource type="Animation" id="Animation_0a7dd"]
 resource_name = "idle_left"
 length = 0.25
 step = 0.25
@@ -58,7 +58,7 @@ tracks/0/keys = {
 "values": [16]
 }
 
-[sub_resource type="Animation" id="Animation_sl4n7"]
+[sub_resource type="Animation" id="Animation_w76ue"]
 resource_name = "idle_right"
 length = 0.25
 step = 0.25
@@ -75,7 +75,7 @@ tracks/0/keys = {
 "values": [22]
 }
 
-[sub_resource type="Animation" id="Animation_07t2q"]
+[sub_resource type="Animation" id="Animation_h0l57"]
 resource_name = "idle_up"
 length = 0.25
 step = 0.25
@@ -92,7 +92,7 @@ tracks/0/keys = {
 "values": [10]
 }
 
-[sub_resource type="Animation" id="Animation_rwi8j"]
+[sub_resource type="Animation" id="Animation_xkq62"]
 resource_name = "talk_down"
 length = 0.5
 loop_mode = 1
@@ -110,7 +110,7 @@ tracks/0/keys = {
 "values": [4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_jjs2m"]
+[sub_resource type="Animation" id="Animation_3vtj3"]
 resource_name = "talk_left"
 length = 0.5
 loop_mode = 1
@@ -128,7 +128,7 @@ tracks/0/keys = {
 "values": [16, 17]
 }
 
-[sub_resource type="Animation" id="Animation_gaud6"]
+[sub_resource type="Animation" id="Animation_egll2"]
 resource_name = "talk_right"
 length = 0.5
 loop_mode = 1
@@ -146,7 +146,7 @@ tracks/0/keys = {
 "values": [22, 23]
 }
 
-[sub_resource type="Animation" id="Animation_4yqup"]
+[sub_resource type="Animation" id="Animation_a8oom"]
 resource_name = "talk_up"
 length = 0.5
 loop_mode = 1
@@ -164,7 +164,7 @@ tracks/0/keys = {
 "values": [10, 11]
 }
 
-[sub_resource type="Animation" id="Animation_f8wal"]
+[sub_resource type="Animation" id="Animation_vaiqh"]
 resource_name = "walk_down"
 loop_mode = 1
 step = 0.25
@@ -181,7 +181,7 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_owo1e"]
+[sub_resource type="Animation" id="Animation_l58il"]
 resource_name = "walk_left"
 loop_mode = 1
 step = 0.25
@@ -198,7 +198,7 @@ tracks/0/keys = {
 "values": [12, 13, 14, 15]
 }
 
-[sub_resource type="Animation" id="Animation_6d4l8"]
+[sub_resource type="Animation" id="Animation_rjll0"]
 resource_name = "walk_right"
 loop_mode = 1
 step = 0.25
@@ -215,7 +215,7 @@ tracks/0/keys = {
 "values": [18, 19, 20, 21]
 }
 
-[sub_resource type="Animation" id="Animation_hmuqj"]
+[sub_resource type="Animation" id="Animation_vaf61"]
 resource_name = "walk_up"
 loop_mode = 1
 step = 0.25
@@ -232,38 +232,38 @@ tracks/0/keys = {
 "values": [6, 7, 8, 9]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3v2l"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqscg"]
 _data = {
-"RESET": SubResource("Animation_crtvj"),
-"idle_down": SubResource("Animation_twpqj"),
-"idle_left": SubResource("Animation_ax18v"),
-"idle_right": SubResource("Animation_sl4n7"),
-"idle_up": SubResource("Animation_07t2q"),
-"talk_down": SubResource("Animation_rwi8j"),
-"talk_left": SubResource("Animation_jjs2m"),
-"talk_right": SubResource("Animation_gaud6"),
-"talk_up": SubResource("Animation_4yqup"),
-"walk_down": SubResource("Animation_f8wal"),
-"walk_left": SubResource("Animation_owo1e"),
-"walk_right": SubResource("Animation_6d4l8"),
-"walk_up": SubResource("Animation_hmuqj")
+"RESET": SubResource("Animation_6hxqy"),
+"idle_down": SubResource("Animation_cf7kl"),
+"idle_left": SubResource("Animation_0a7dd"),
+"idle_right": SubResource("Animation_w76ue"),
+"idle_up": SubResource("Animation_h0l57"),
+"talk_down": SubResource("Animation_xkq62"),
+"talk_left": SubResource("Animation_3vtj3"),
+"talk_right": SubResource("Animation_egll2"),
+"talk_up": SubResource("Animation_a8oom"),
+"walk_down": SubResource("Animation_vaiqh"),
+"walk_left": SubResource("Animation_l58il"),
+"walk_right": SubResource("Animation_rjll0"),
+"walk_up": SubResource("Animation_vaf61")
 }
 
-[node name="Mooch" type="CharacterBody2D"]
+[node name="Ed" type="CharacterBody2D"]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 0.499999)
-texture = SubResource("AtlasTexture_d78nt")
+position = Vector2(0, -0.500001)
+texture = SubResource("AtlasTexture_30052")
 hframes = 6
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, 17)
-shape = SubResource("RectangleShape2D_rnojb")
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_hg552")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u3v2l")
+"": SubResource("AnimationLibrary_oqscg")
 }
