@@ -7,7 +7,7 @@ atlas = ExtResource("1_lwmh0")
 region = Rect2(0, 109, 528, 177)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qv335"]
-size = Vector2(23, 24)
+size = Vector2(23, 14)
 
 [sub_resource type="Animation" id="Animation_37q65"]
 resource_name = "walk_down"
@@ -277,7 +277,7 @@ hframes = 12
 vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 16)
+position = Vector2(-1.5, 21)
 shape = SubResource("RectangleShape2D_qv335")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

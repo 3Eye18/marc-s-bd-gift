@@ -7,7 +7,7 @@ atlas = ExtResource("1_hh2ad")
 region = Rect2(0, 0, 348, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_it2ne"]
-size = Vector2(25, 22)
+size = Vector2(25, 14)
 
 [sub_resource type="Animation" id="Animation_gdegq"]
 length = 0.001
@@ -262,7 +262,7 @@ vframes = 2
 frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 13)
+position = Vector2(0.5, 18)
 shape = SubResource("RectangleShape2D_it2ne")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
