@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7bh03o0iffxo"]
 
-[ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprite Cropped.png" id="1_bp3r1"]
+[ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="1_bp3r1"]
 [ext_resource type="Script" path="res://Script/moray.gd" id="2_eyhuw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1tpcc"]

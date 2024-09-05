@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://dmp6xejwtqclq"]
 
-[ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/PC Computer - Undertale Yellow - Snowdin.png" id="1_jft4v"]
+[ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Snowdin.png" id="1_jft4v"]
 [ext_resource type="Script" path="res://Script/honeydew_resort_outside.gd" id="1_msndj"]
 [ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/clover.tscn" id="2_0ij8c"]
 [ext_resource type="PackedScene" uid="uid://mkgrlfldgde7" path="res://Scene/save_point.tscn" id="3_1fgc3"]

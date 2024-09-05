@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4ivlujcyhqxj"]
+[gd_scene load_steps=3 format=3 uid="uid://d4ivlujcyhqxj"]
 
+[ext_resource type="PackedScene" uid="uid://bkoa4kb5w8e7g" path="res://Scene/ui.tscn" id="1_vivtr"]
 [ext_resource type="PackedScene" uid="uid://dbuiwa8lfrgct" path="res://Scene/honeydew_resort_inside.tscn" id="2_2tfj3"]
 
 [node name="Main Game" type="Node"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" parent="." instance=ExtResource("1_vivtr")]
 
 [node name="Room" type="Node" parent="."]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://c0oy0i2kmd5m2"]
 
 [ext_resource type="Script" path="res://Script/clover.gd" id="1_mqv6t"]
-[ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprite Cropped.png" id="2_wo6js"]
+[ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="2_wo6js"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vicl"]
 atlas = ExtResource("2_wo6js")

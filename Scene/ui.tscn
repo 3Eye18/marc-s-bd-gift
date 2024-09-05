@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkoa4kb5w8e7g"]
+
+[ext_resource type="FontFile" uid="uid://b8njpcndd3o4s" path="res://Asset/Font/DeterminationSansWebRegular-369X.ttf" id="1_tjng4"]
+[ext_resource type="Script" path="res://Script/ui.gd" id="1_wy4gh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25tgw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utv5p"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_wy4gh")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 274.0
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 60
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_25tgw")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_utv5p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Start Symbol" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_tjng4")
+theme_override_font_sizes/font_size = 58
+text = "*"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(664, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_tjng4")
+theme_override_font_sizes/font_size = 58
+text = "Attention mf, we are all fake. We are in a fucking game. We are gonna die!!"
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Ending" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tjng4")
+theme_override_font_sizes/font_size = 58
