@@ -131,7 +131,7 @@ script = ExtResource("1_rrj3b")
 [node name="House" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(32, -4440)
+position = Vector2(32, -4439)
 scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_wn5rn")
 offset = Vector2(0, 900)
@@ -425,7 +425,8 @@ scale = Vector2(4, 4)
 [node name="Shopkeeper" type="Sprite2D" parent="NPCs"]
 z_index = 1
 texture_filter = 1
-position = Vector2(127.5, 17.5)
+position = Vector2(127.5, 17.75)
+scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_yj5jv")
 
 [node name="Martlet" parent="NPCs" instance=ExtResource("4_f0gv5")]
