@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://mkgrlfldgde7"]
 
-[ext_resource type="Script" path="res://Script/save_point.gd" id="1_5a033"]
+[ext_resource type="Script" path="res://Script/Objects/save_point.gd" id="1_5a033"]
 [ext_resource type="Texture2D" uid="uid://1he04bgybcxo" path="res://Asset/Sprites/PC Computer - Undertale - Miscellaneous Sprites.png" id="2_yea2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gej5x"]

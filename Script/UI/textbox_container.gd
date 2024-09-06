@@ -1,8 +1,7 @@
-extends CanvasLayer
+extends MarginContainer
 
-@onready var textbox_container = $TextboxContainer
-@onready var start_symbol = $"TextboxContainer/MarginContainer/HBoxContainer/Start Symbol"
-@onready var text = $TextboxContainer/MarginContainer/HBoxContainer/Text
+@onready var start_symbol = $"MarginContainer/HBoxContainer/Start Symbol"
+@onready var text = $MarginContainer/HBoxContainer/Text
 @onready var new_tween = get_tree().create_tween()
 
 @export var TEXT_SPEED = 40.0
@@ -27,6 +26,7 @@ func _ready():
 	queue("aaaaaaaaa")
 	queue("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 	queue("Like my little existential crisis?")
+
 
 func _process(delta):
 	if !new_tween.is_running() and do_once:
@@ -56,12 +56,12 @@ func queue(next_text):
 func hide_textbox():
 	start_symbol.text = ""
 	text.text = ""
-	textbox_container.hide()
+	self.hide()
 
 
 func show_textbox():
 	start_symbol.text = "*"
-	textbox_container.show()
+	self.show()
 
 
 func display_text():
@@ -78,6 +78,7 @@ func display_text():
 	else:
 		new_tween.tween_property(text, "visible_ratio", 1.0, next_text.length() / TEXT_SPEED)
 	return new_tween
+
 
 func change_state(next_state):
 	current_state = next_state

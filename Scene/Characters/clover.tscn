@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://c0oy0i2kmd5m2"]
 
-[ext_resource type="Script" path="res://Script/clover.gd" id="1_mqv6t"]
+[ext_resource type="Script" path="res://Script/Characters/clover.gd" id="1_mqv6t"]
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="2_wo6js"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vicl"]
@@ -256,7 +256,7 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_kd8ca")
 states/Walk/position = Vector2(372, 173)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o07xb"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_g0vxl"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_4xvow")]
 
-[node name="Clover" type="CharacterBody2D"]
+[node name="Clover" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_mqv6t")
 metadata/_edit_group_ = true

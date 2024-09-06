@@ -1,95 +1,95 @@
 [gd_scene load_steps=45 format=3 uid="uid://dbuiwa8lfrgct"]
 
-[ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/clover.tscn" id="1_2t7be"]
-[ext_resource type="Script" path="res://Script/honeydew_resort_inside.gd" id="1_rrj3b"]
-[ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Snowdin.png" id="1_shnrq"]
-[ext_resource type="Texture2D" uid="uid://uv27siec4bbe" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png" id="3_iwvns"]
-[ext_resource type="PackedScene" uid="uid://c6w05bdcntc8a" path="res://Scene/martlet.tscn" id="4_f0gv5"]
-[ext_resource type="PackedScene" uid="uid://d1w32oo6s6ql3" path="res://Scene/ceroba.tscn" id="5_ui2ch"]
-[ext_resource type="PackedScene" uid="uid://c3op052tasysx" path="res://Scene/starlo.tscn" id="6_x7305"]
-[ext_resource type="PackedScene" uid="uid://bth1x8kh43nkr" path="res://Scene/dalv.tscn" id="7_itgny"]
-[ext_resource type="PackedScene" uid="uid://b7bh03o0iffxo" path="res://Scene/moray.tscn" id="8_vevx6"]
-[ext_resource type="PackedScene" uid="uid://css66f2p7oag6" path="res://Scene/mooch.tscn" id="9_84nxy"]
-[ext_resource type="PackedScene" uid="uid://by1fle6oyyejp" path="res://Scene/ed.tscn" id="10_qpy3c"]
-[ext_resource type="PackedScene" uid="uid://3whk6erka7of" path="res://Scene/ace.tscn" id="11_ktjsk"]
+[ext_resource type="Script" path="res://Script/Rooms/honeydew_resort_inside.gd" id="1_ba26j"]
+[ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Snowdin.png" id="2_670vi"]
+[ext_resource type="Texture2D" uid="uid://uv27siec4bbe" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png" id="3_r1lnu"]
+[ext_resource type="PackedScene" uid="uid://c6w05bdcntc8a" path="res://Scene/Characters/martlet.tscn" id="4_ksqr4"]
+[ext_resource type="PackedScene" uid="uid://d1w32oo6s6ql3" path="res://Scene/Characters/ceroba.tscn" id="5_3dbfw"]
+[ext_resource type="PackedScene" uid="uid://c3op052tasysx" path="res://Scene/Characters/starlo.tscn" id="6_amtvm"]
+[ext_resource type="PackedScene" uid="uid://bth1x8kh43nkr" path="res://Scene/Characters/dalv.tscn" id="7_tfcmv"]
+[ext_resource type="PackedScene" uid="uid://b7bh03o0iffxo" path="res://Scene/Characters/moray.tscn" id="8_s0o7s"]
+[ext_resource type="PackedScene" uid="uid://css66f2p7oag6" path="res://Scene/Characters/mooch.tscn" id="9_a2cn5"]
+[ext_resource type="PackedScene" uid="uid://by1fle6oyyejp" path="res://Scene/Characters/ed.tscn" id="10_2nn2s"]
+[ext_resource type="PackedScene" uid="uid://3whk6erka7of" path="res://Scene/Characters/ace.tscn" id="11_a2mwd"]
+[ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/Characters/clover.tscn" id="12_hfsbg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn5rn"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2004, 532, 428, 500)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67rm7"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2389, 130, 45, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qv6ll"]
 size = Vector2(45, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7xhw"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2293, 130, 45, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45r64"]
 size = Vector2(45, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ljdws"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2341, 130, 45, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6xmq"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2686, 2083, 73, 217)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiqd1"]
 size = Vector2(73, 207.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1263l"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2437, 148, 21, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oxei"]
 size = Vector2(21, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jva43"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2094, 130, 82, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pjax"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2762, 2072, 40, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml3lk"]
 size = Vector2(41, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djhju"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2585, 1498, 137, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_740qa"]
 size = Vector2(137, 42.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8jgbh"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2627, 51, 34, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isswi"]
 size = Vector2(35, 71)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmdhu"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2515, 133, 30, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grkg0"]
 size = Vector2(20, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbeft"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2485, 139, 27, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l14h"]
 size = Vector2(23, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0jt8"]
-atlas = ExtResource("1_shnrq")
+atlas = ExtResource("2_670vi")
 region = Rect2(2461, 133, 21, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ps2"]
@@ -120,13 +120,13 @@ size = Vector2(61, 160)
 size = Vector2(14, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj5jv"]
-atlas = ExtResource("3_iwvns")
+atlas = ExtResource("3_r1lnu")
 region = Rect2(355, 103, 17, 41)
 
 [node name="Honeydew Resort Inside" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(0, 55)
-script = ExtResource("1_rrj3b")
+script = ExtResource("1_ba26j")
 
 [node name="House" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -428,32 +428,32 @@ texture_filter = 1
 position = Vector2(127.5, 17.75)
 texture = SubResource("AtlasTexture_yj5jv")
 
-[node name="Martlet" parent="NPCs" instance=ExtResource("4_f0gv5")]
+[node name="Martlet" parent="NPCs" instance=ExtResource("4_ksqr4")]
 position = Vector2(-30, 73.25)
 
-[node name="Ceroba" parent="NPCs" instance=ExtResource("5_ui2ch")]
+[node name="Ceroba" parent="NPCs" instance=ExtResource("5_3dbfw")]
 y_sort_enabled = true
 position = Vector2(0, 71.25)
 
-[node name="Starlo" parent="NPCs" instance=ExtResource("6_x7305")]
+[node name="Starlo" parent="NPCs" instance=ExtResource("6_amtvm")]
 y_sort_enabled = true
 position = Vector2(31, 70.25)
 
-[node name="Dalv" parent="NPCs" instance=ExtResource("7_itgny")]
+[node name="Dalv" parent="NPCs" instance=ExtResource("7_tfcmv")]
 y_sort_enabled = true
 position = Vector2(-110, 124.25)
 
-[node name="Moray" parent="NPCs" instance=ExtResource("8_vevx6")]
+[node name="Moray" parent="NPCs" instance=ExtResource("8_s0o7s")]
 position = Vector2(3, -128.75)
 
-[node name="Mooch" parent="NPCs" instance=ExtResource("9_84nxy")]
+[node name="Mooch" parent="NPCs" instance=ExtResource("9_a2cn5")]
 position = Vector2(43, -66.75)
 
-[node name="Ed" parent="NPCs" instance=ExtResource("10_qpy3c")]
+[node name="Ed" parent="NPCs" instance=ExtResource("10_2nn2s")]
 position = Vector2(-85, -69.75)
 
-[node name="Ace" parent="NPCs" instance=ExtResource("11_ktjsk")]
+[node name="Ace" parent="NPCs" instance=ExtResource("11_a2mwd")]
 position = Vector2(16, -67.75)
 
-[node name="Clover" parent="." instance=ExtResource("1_2t7be")]
+[node name="Clover" parent="." instance=ExtResource("12_hfsbg")]
 position = Vector2(32, -7)

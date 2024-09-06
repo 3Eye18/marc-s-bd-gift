@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1w32oo6s6ql3"]
+[gd_scene load_steps=20 format=3 uid="uid://d1w32oo6s6ql3"]
 
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="1_a6qdr"]
+[ext_resource type="PackedScene" uid="uid://7jkmqpy3acuh" path="res://Scene/UI/interaction_area.tscn" id="2_8pj3u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ws7i"]
 atlas = ExtResource("1_a6qdr")
@@ -247,6 +248,9 @@ _data = {
 "walk_up": SubResource("Animation_6ohoa")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_un4lv"]
+radius = 14.5
+
 [node name="Ceroba" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -264,3 +268,10 @@ shape = SubResource("RectangleShape2D_nrtkj")
 libraries = {
 "": SubResource("AnimationLibrary_xeimt")
 }
+
+[node name="Interaction Area" parent="." instance=ExtResource("2_8pj3u")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
+position = Vector2(0.5, 20)
+shape = SubResource("CircleShape2D_un4lv")
+debug_color = Color(0.769865, 0.19893, 0.96462, 0.42)
