@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnjd4m24euhsi"]
+[gd_scene load_steps=6 format=3 uid="uid://cnjd4m24euhsi"]
 
-[ext_resource type="Script" path="res://Script/UI/textbox_container.gd" id="1_3eouy"]
-[ext_resource type="FontFile" uid="uid://b8njpcndd3o4s" path="res://Asset/Font/DeterminationSansWebRegular-369X.ttf" id="2_gfj6h"]
+[ext_resource type="Script" path="res://Script/UI/alt_textbox.gd" id="1_yp8lm"]
+[ext_resource type="FontFile" uid="uid://b8njpcndd3o4s" path="res://Asset/Font/DeterminationSansWebRegular-369X.ttf" id="2_ausct"]
+[ext_resource type="FontFile" uid="uid://b3b3i4xaotdpc" path="res://Asset/Font/DeterminationMonoWebRegular-Z5oq.ttf" id="3_jvan5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25tgw"]
 bg_color = Color(0, 0, 0, 1)
@@ -13,14 +14,14 @@ border_width_bottom = 10
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utv5p"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="TextboxContainer" type="MarginContainer"]
+[node name="Textbox" type="MarginContainer" groups=["textbox"]]
 texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 274.0
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 60
-script = ExtResource("1_3eouy")
+script = ExtResource("1_yp8lm")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
@@ -53,26 +54,29 @@ texture_filter = 1
 custom_minimum_size = Vector2(66, 0)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_gfj6h")
+theme_override_fonts/font = ExtResource("2_ausct")
 theme_override_font_sizes/font_size = 58
 text = "*"
 horizontal_alignment = 1
 
-[node name="Text" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(664, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_gfj6h")
+theme_override_fonts/font = ExtResource("3_jvan5")
 theme_override_font_sizes/font_size = 58
-text = "Attention mf, we are all fake. We are in a fucking game. We are gonna die!!"
 autowrap_mode = 3
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Ending" type="Label" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(66, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_gfj6h")
+theme_override_fonts/font = ExtResource("2_ausct")
 theme_override_font_sizes/font_size = 58
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

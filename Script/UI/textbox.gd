@@ -22,10 +22,10 @@ var text_queue = []
 func _ready():
 	print("State: READY")
 	hide_textbox()
-	queue("a")
-	queue("aaaaaaaaa")
-	queue("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-	queue("Like my little existential crisis?")
+	#queue("a")
+	#queue("aaaaaaaaa")
+	#queue("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+	#queue("Like my little existential crisis?")
 
 
 func _process(delta):

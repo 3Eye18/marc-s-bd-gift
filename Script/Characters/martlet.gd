@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var speech_sound = preload("res://Asset/Sounds/Talk Ceroba.wav")
+@onready var speech_sound = preload("res://Asset/Sounds/Talk Martlet.wav")
 @onready var interaction_area = $"Interaction Area"
 @onready var animation_tree = $AnimationTree
 
@@ -49,4 +49,3 @@ func _on_interact():
 	
 	interacted = false
 	animation_tree.set("parameters/Idle/blend_position", initial_blend_position)
-	

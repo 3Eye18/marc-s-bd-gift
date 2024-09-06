@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1w32oo6s6ql3"]
+[gd_scene load_steps=38 format=3 uid="uid://d1w32oo6s6ql3"]
 
+[ext_resource type="Script" path="res://Script/Characters/ceroba.gd" id="1_4y4db"]
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="1_a6qdr"]
 [ext_resource type="PackedScene" uid="uid://7jkmqpy3acuh" path="res://Scene/UI/interaction_area.tscn" id="2_8pj3u"]
 
@@ -248,10 +249,82 @@ _data = {
 "walk_up": SubResource("Animation_6ohoa")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_un4lv"]
-radius = 14.5
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pxe1a"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v66dg"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o22m4"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lba25"]
+animation = &"talk_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_oaptj"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_pxe1a")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_v66dg")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_o22m4")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_lba25")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ftqy6"]
+animation = &"talk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqlou"]
+animation = &"talk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_54s2e"]
+animation = &"talk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fncp5"]
+animation = &"talk_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8oyav"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ftqy6")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_aqlou")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_54s2e")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_fncp5")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_r6f4s"]
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_djvof"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xjem8"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c268y"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l1jbs"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fl6r5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_er1gu"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_oaptj")
+states/Idle/position = Vector2(446, 100)
+states/Talk/node = SubResource("AnimationNodeBlendSpace2D_8oyav")
+states/Talk/position = Vector2(446, 33)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_r6f4s")
+states/Walk/position = Vector2(446, 176)
+transitions = ["Talk", "Idle", SubResource("AnimationNodeStateMachineTransition_djvof"), "Idle", "Talk", SubResource("AnimationNodeStateMachineTransition_xjem8"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_c268y"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_l1jbs"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fl6r5")]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyw8c"]
+radius = 8.0
+height = 27.0
 
 [node name="Ceroba" type="CharacterBody2D"]
+script = ExtResource("1_4y4db")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -269,9 +342,17 @@ libraries = {
 "": SubResource("AnimationLibrary_xeimt")
 }
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_er1gu")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Talk/blend_position = Vector2(0, 0)
+parameters/Walk/blend_position = Vector2(0, 0)
+
 [node name="Interaction Area" parent="." instance=ExtResource("2_8pj3u")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
 position = Vector2(0.5, 20)
-shape = SubResource("CircleShape2D_un4lv")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oyw8c")
 debug_color = Color(0.769865, 0.19893, 0.96462, 0.42)
