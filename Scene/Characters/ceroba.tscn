@@ -350,9 +350,9 @@ parameters/Talk/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Interaction Area" parent="." instance=ExtResource("2_8pj3u")]
+position = Vector2(0.5, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
-position = Vector2(0.5, 20)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oyw8c")
 debug_color = Color(0.769865, 0.19893, 0.96462, 0.42)

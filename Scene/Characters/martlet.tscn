@@ -357,9 +357,9 @@ parameters/Talk/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Interaction Area" parent="." instance=ExtResource("3_wvwle")]
+position = Vector2(0.5, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
-position = Vector2(0.5, 18)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6x5js")
 debug_color = Color(0.769865, 0.19893, 0.96462, 0.42)
