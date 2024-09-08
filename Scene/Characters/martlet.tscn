@@ -1,13 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://c6w05bdcntc8a"]
+[gd_scene load_steps=42 format=3 uid="uid://c6w05bdcntc8a"]
 
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="1_hh2ad"]
 [ext_resource type="Script" path="res://Script/Characters/martlet.gd" id="1_xopqx"]
 [ext_resource type="AudioStream" uid="uid://c4b8pohyhi3bo" path="res://Asset/Sounds/Talk Martlet.wav" id="2_25mqy"]
 [ext_resource type="PackedScene" uid="uid://7jkmqpy3acuh" path="res://Scene/UI/interaction_area.tscn" id="3_wvwle"]
 [ext_resource type="PackedScene" uid="uid://b60cc60vyf1pr" path="res://Scene/State Machine/state_machine.tscn" id="5_2yt6x"]
-[ext_resource type="Script" path="res://Script/State Machine/idle.gd" id="6_wfjlj"]
-[ext_resource type="Script" path="res://Script/State Machine/walk.gd" id="7_gi040"]
-[ext_resource type="Script" path="res://Script/State Machine/talk.gd" id="8_ndgki"]
+[ext_resource type="PackedScene" uid="uid://b0aloes63f6de" path="res://Scene/State Machine/idle.tscn" id="6_5n5yh"]
+[ext_resource type="PackedScene" uid="uid://176fqjn3rwb" path="res://Scene/State Machine/walk.tscn" id="7_ga2nk"]
+[ext_resource type="PackedScene" uid="uid://wd6yi38drraj" path="res://Scene/State Machine/talk.tscn" id="8_ssdv1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2vc7"]
 atlas = ExtResource("1_hh2ad")
@@ -326,10 +326,6 @@ states/Walk/position = Vector2(410, 23)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_kabhc"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_jpnc3"), "Talk", "Idle", SubResource("AnimationNodeStateMachineTransition_tf6ym"), "Idle", "Talk", SubResource("AnimationNodeStateMachineTransition_e613p"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ty1xm")]
 graph_offset = Vector2(0, -26.1516)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6x5js"]
-radius = 8.0
-height = 27.0
-
 [node name="Martlet" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_xopqx")
@@ -365,19 +361,14 @@ parameters/Walk/blend_position = Vector2(0, 0)
 [node name="Interaction Area" parent="." instance=ExtResource("3_wvwle")]
 position = Vector2(0.5, 18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_6x5js")
-debug_color = Color(0.769865, 0.19893, 0.96462, 0.42)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interaction Area"]
+polygon = PackedVector2Array(12.6, 0, 0, -7.1, -12.6, 0, 0, 7.1)
 
 [node name="State Machine" parent="." instance=ExtResource("5_2yt6x")]
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="State Machine"]
-script = ExtResource("6_wfjlj")
+[node name="Idle" parent="State Machine" instance=ExtResource("6_5n5yh")]
 
-[node name="Walk" type="Node" parent="State Machine"]
-script = ExtResource("7_gi040")
+[node name="Walk" parent="State Machine" instance=ExtResource("7_ga2nk")]
 
-[node name="Talk" type="Node" parent="State Machine"]
-script = ExtResource("8_ndgki")
+[node name="Talk" parent="State Machine" instance=ExtResource("8_ssdv1")]

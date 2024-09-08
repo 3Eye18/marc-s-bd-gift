@@ -1,23 +1,23 @@
 extends CharacterBody2D
 
 @export var speech_sound = preload("res://Asset/Sounds/Texts.wav")
+@export var first_blend_position = Vector2(0, 1)
 #@onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var interaction_area = $"Interaction Area"
 @onready var animation_tree = $AnimationTree
 
-var lines: Array[String] = [
-	"Hey Clover! Happy Birthday!",
-	"How's life in Snowdin so far?",
-	"I hope it's not too cold in here for you.",
-	"You can always move in my house if you want to.",
-	"The Dune might be dry and hot but...",
-	"If you can take the Furnace heat, you can take the Dune's."
+var lines: Array[Dictionary] = [
+	{
+		"line": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		"sprite_name": "martlet_smug"
+	}
 ]
 var interacted: bool = false
 
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
+	animation_tree.set("parameters/Idle/blend_position", first_blend_position)
 
 
 func _physics_process(delta):
@@ -39,7 +39,7 @@ func _on_interact():
 	var initial_blend_position = animation_tree.get("parameters/Idle/blend_position")
 	interacted = true
 	
-	DialogueManager.start_dialogue(Vector2(0, 0), lines, speech_sound)
+	DialogueManager.start_dialogue(Vector2(0, 508), lines, speech_sound)
 	await DialogueManager.dialogue_finished
 	
 	interacted = false

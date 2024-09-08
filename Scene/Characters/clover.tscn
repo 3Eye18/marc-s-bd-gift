@@ -259,7 +259,6 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [node name="Clover" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_mqv6t")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

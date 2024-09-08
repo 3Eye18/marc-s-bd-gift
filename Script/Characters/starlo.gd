@@ -8,11 +8,7 @@ extends CharacterBody2D
 var lines: Array[Dictionary] = [
 	{
 		"line": "egassem drawkcaB",
-		"sprite_name": "ceroba_devious"
-	},
-	{
-		"line": "Backward message",
-		"sprite_name": "none"
+		"sprite_name": "starlo_happy"
 	}
 ]
 var interacted: bool = false
@@ -21,6 +17,7 @@ var interacted: bool = false
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	animation_tree.set("parameters/Idle/blend_position", first_blend_position)
+	print($Sprite2D.frame)
 
 
 func _physics_process(delta):

@@ -14,7 +14,7 @@ func physics_update(delta: float) -> void:
 
 func check_direction_to_player():
 	# Calculate direction vector
-	var direction_vector = (player.get_node("CollisionShape2D").global_position - owner.get_node("Interaction Area/CollisionShape2D").global_position).normalized()
+	var direction_vector = (player.get_node("CollisionShape2D").global_position - owner.get_node("Interaction Area").get_child(0).global_position).normalized()
 	# Calculate angle between direction vector and forward direction
 	var angle = rad_to_deg(direction_vector.angle_to(Vector2.UP))
 	
