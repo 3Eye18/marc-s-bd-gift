@@ -363,6 +363,8 @@ states/Walk/position = Vector2(381, 175)
 transitions = ["Idle", "Talk", SubResource("AnimationNodeStateMachineTransition_3bv3r"), "Talk", "Idle", SubResource("AnimationNodeStateMachineTransition_mp43h"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_7g5xv"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_3x034"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxw65")]
 
 [node name="Starlo" type="CharacterBody2D"]
+platform_on_leave = 2
+platform_floor_layers = 4294967040
 script = ExtResource("1_u57ia")
 speech_sound = ExtResource("2_2oqnr")
 metadata/_edit_group_ = true
@@ -406,3 +408,7 @@ initial_state = NodePath("Idle")
 [node name="Idle" parent="State Machine" instance=ExtResource("5_dov0n")]
 
 [node name="Walk" parent="State Machine" instance=ExtResource("6_ihmq6")]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

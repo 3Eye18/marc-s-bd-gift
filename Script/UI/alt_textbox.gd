@@ -43,10 +43,12 @@ func _display_letter():
 			return
 		
 		match text[letter_index]:
-			"!", ".", ",", "?", ":":
+			"!", ",", "?", ":":
 				timer.start(PUNCTUATION_TIME)
 			" ":
 				timer.start(SPACE_TIME)
+			".":
+				timer.start(PUNCTUATION_TIME * 2)
 			_:
 				timer.start(LETTER_TIME)
 				animated_sprite.play(sprite)

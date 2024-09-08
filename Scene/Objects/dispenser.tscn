@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://76cr5ga0hwo2"]
+
+[ext_resource type="Script" path="res://Script/Objects/dispenser.gd" id="1_0k7mt"]
+[ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Snowdin.png" id="1_5soiy"]
+[ext_resource type="PackedScene" uid="uid://7jkmqpy3acuh" path="res://Scene/UI/interaction_area.tscn" id="2_hjeq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbeft"]
+atlas = ExtResource("1_5soiy")
+region = Rect2(2485, 139, 27, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l14h"]
+size = Vector2(23, 14)
+
+[node name="Dispenser" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(-102.5, -149.5)
+script = ExtResource("1_0k7mt")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_qbeft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_6l14h")
+debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Interaction Area" parent="." instance=ExtResource("2_hjeq7")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interaction Area"]
+position = Vector2(0, 12.5)
+polygon = PackedVector2Array(11.6, 0, 0, -7.1, -11.6, 0, 0, 7.1)

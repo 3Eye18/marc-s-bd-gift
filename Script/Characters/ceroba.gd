@@ -15,6 +15,7 @@ var lines: Array[Dictionary] = [
 		"sprite_name": "none"
 	}
 ]
+var direction = Vector2.ZERO
 var interacted: bool = false
 
 
@@ -31,7 +32,7 @@ func _on_interact():
 	var initial_blend_position = animation_tree.get("parameters/Idle/blend_position")
 	interacted = true
 	
-	DialogueManager.start_dialogue(Vector2(0, 508), lines, speech_sound)
+	DialogueManager.start_dialogue(DialogueManager.bottom_text, lines, speech_sound)
 	await DialogueManager.dialogue_finished
 	
 	interacted = false

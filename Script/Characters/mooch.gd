@@ -11,13 +11,13 @@ var lines: Array[Dictionary] = [
 		"sprite_name": "mooch_smug"
 	}
 ]
+var direction = Vector2.ZERO
 var interacted: bool = false
 
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	animation_tree.set("parameters/Idle/blend_position", first_blend_position)
-	print($Sprite2D.frame)
 
 
 func _physics_process(delta):
@@ -28,7 +28,7 @@ func _on_interact():
 	var initial_blend_position = animation_tree.get("parameters/Idle/blend_position")
 	interacted = true
 	
-	DialogueManager.start_dialogue(Vector2(0, 508), lines, speech_sound)
+	DialogueManager.start_dialogue(DialogueManager.bottom_text, lines, speech_sound)
 	await DialogueManager.dialogue_finished
 	
 	interacted = false

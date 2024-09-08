@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 
-@export var SPEED: float = 20000
+@export var SPEED: float = 300
 
 var can_move: bool = true
 
@@ -24,7 +24,7 @@ func _physics_process(delta):
 			animation_tree.set("parameters/Walk/blend_position", direction)
 		
 		var speed: float = SPEED
-		velocity = direction * speed * delta
+		velocity = direction * speed
 		
 		move_and_slide()
 	else: 

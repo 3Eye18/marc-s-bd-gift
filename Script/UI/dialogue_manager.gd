@@ -1,12 +1,12 @@
 #Position cheatsheet:
 	#top = Vector2.ZERO
-	#bot = Vector2(0, 508)
+	#bot = Vector2(0, 498)
 
 extends Node
 
 signal dialogue_finished
 
-@onready var textbox_no_sprite_scene = preload("res://Scene/UI/textbox.tscn")
+@onready var textbox_scene = preload("res://Scene/UI/textbox.tscn")
 
 var textbox
 var textbox_position: Vector2
@@ -17,6 +17,8 @@ var dialogue_lines: Array[Dictionary] = []
 var current_line_index = 0
 var is_dialogue_active = false
 var can_advance_line = false
+var top_text = Vector2.ZERO
+var bottom_text = Vector2(0, 478)
 
 
 func start_dialogue(position: Vector2, lines: Array[Dictionary], speech_sfx: AudioStream):
@@ -32,7 +34,7 @@ func start_dialogue(position: Vector2, lines: Array[Dictionary], speech_sfx: Aud
 
 
 func _show_text_box():
-	textbox = textbox_no_sprite_scene.instantiate()
+	textbox = textbox_scene.instantiate()
 	textbox.finished_displaying.connect(_on_textbox_finished_displaying)
 	get_tree().root.get_child(2).get_child(0).add_child(textbox)
 	textbox.global_position = textbox_position

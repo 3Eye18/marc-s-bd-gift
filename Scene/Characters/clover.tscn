@@ -258,6 +258,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Clover" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
+platform_on_leave = 2
+platform_floor_layers = 4278190080
 script = ExtResource("1_mqv6t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
