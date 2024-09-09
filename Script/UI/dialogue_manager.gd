@@ -38,8 +38,9 @@ func _show_text_box():
 	textbox.finished_displaying.connect(_on_textbox_finished_displaying)
 	get_tree().root.get_child(2).get_child(0).add_child(textbox)
 	textbox.global_position = textbox_position
-	textbox.display_text(dialogue_lines[current_line_index].line, sfx, dialogue_lines[current_line_index].sprite_name)
 	can_advance_line = false
+	textbox.display_text(dialogue_lines[current_line_index].line, sfx, dialogue_lines[current_line_index].sprite_name)
+	
 
 
 func _on_textbox_finished_displaying():

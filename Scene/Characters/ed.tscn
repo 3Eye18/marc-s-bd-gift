@@ -326,7 +326,6 @@ blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_by6e2"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hqjoc"]
 
@@ -349,6 +348,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 y_sort_enabled = true
 script = ExtResource("1_l6267")
 speech_sound = ExtResource("2_pyjpw")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

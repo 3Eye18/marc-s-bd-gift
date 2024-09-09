@@ -12,7 +12,7 @@ var lines: Array[Dictionary] = [
 	},
 	{
 		"line": "Backward message",
-		"sprite_name": "none"
+		"sprite_name": "ceroba_devious"
 	}
 ]
 var direction = Vector2.ZERO

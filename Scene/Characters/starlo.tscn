@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c3op052tasysx"]
+[gd_scene load_steps=52 format=3 uid="uid://c3op052tasysx"]
 
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="1_lwmh0"]
 [ext_resource type="Script" path="res://Script/Characters/starlo.gd" id="1_u57ia"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://wd6yi38drraj" path="res://Scene/State Machine/talk.tscn" id="4_27k2n"]
 [ext_resource type="PackedScene" uid="uid://b0aloes63f6de" path="res://Scene/State Machine/idle.tscn" id="5_dov0n"]
 [ext_resource type="PackedScene" uid="uid://176fqjn3rwb" path="res://Scene/State Machine/walk.tscn" id="6_ihmq6"]
+[ext_resource type="Script" path="res://Script/State Machine/starlo_idle.gd" id="8_p802d"]
+[ext_resource type="Script" path="res://Script/State Machine/finger_gun.gd" id="9_2eqac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ourj4"]
 atlas = ExtResource("1_lwmh0")
@@ -342,6 +344,9 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_dd328")
 blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hqy2v"]
+animation = &"finger_gun"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3bv3r"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mp43h"]
@@ -351,7 +356,10 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3x034"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxw65"]
-advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rlesd"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uegms"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_giudj"]
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_xo1tp")
@@ -360,7 +368,9 @@ states/Talk/node = SubResource("AnimationNodeBlendSpace2D_qt1ua")
 states/Talk/position = Vector2(381, 25)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_dpkxe")
 states/Walk/position = Vector2(381, 175)
-transitions = ["Idle", "Talk", SubResource("AnimationNodeStateMachineTransition_3bv3r"), "Talk", "Idle", SubResource("AnimationNodeStateMachineTransition_mp43h"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_7g5xv"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_3x034"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxw65")]
+states/finger_gun/node = SubResource("AnimationNodeAnimation_hqy2v")
+states/finger_gun/position = Vector2(514, 100)
+transitions = ["Idle", "Talk", SubResource("AnimationNodeStateMachineTransition_3bv3r"), "Talk", "Idle", SubResource("AnimationNodeStateMachineTransition_mp43h"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_7g5xv"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_3x034"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxw65"), "Idle", "finger_gun", SubResource("AnimationNodeStateMachineTransition_rlesd"), "finger_gun", "Idle", SubResource("AnimationNodeStateMachineTransition_uegms")]
 
 [node name="Starlo" type="CharacterBody2D"]
 platform_on_leave = 2
@@ -406,8 +416,12 @@ initial_state = NodePath("Idle")
 [node name="Talk" parent="State Machine" instance=ExtResource("4_27k2n")]
 
 [node name="Idle" parent="State Machine" instance=ExtResource("5_dov0n")]
+script = ExtResource("8_p802d")
 
 [node name="Walk" parent="State Machine" instance=ExtResource("6_ihmq6")]
+
+[node name="FingerGun" type="Node" parent="State Machine"]
+script = ExtResource("9_2eqac")
 
 [node name="Timer" type="Timer" parent="."]
 

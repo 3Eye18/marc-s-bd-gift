@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c0oy0i2kmd5m2"]
+[gd_scene load_steps=33 format=3 uid="uid://c0oy0i2kmd5m2"]
 
 [ext_resource type="Script" path="res://Script/Characters/clover.gd" id="1_mqv6t"]
 [ext_resource type="Texture2D" uid="uid://do803b4nnk8gr" path="res://Asset/Sprites/Sprite Cropped.png" id="2_wo6js"]
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_qyqgb"]
@@ -240,21 +240,30 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_dniul")
 blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hq12u"]
+animation = &"finger_gun"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o07xb"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g0vxl"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4xvow"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b1qqn"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a7x3c"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k77wx"]
 states/End/position = Vector2(684, 95)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_y1orh")
 states/Idle/position = Vector2(372, 95)
-states/Start/position = Vector2(203, 95)
+states/Start/position = Vector2(204, 95)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_kd8ca")
 states/Walk/position = Vector2(372, 173)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o07xb"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_g0vxl"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_4xvow")]
+states/finger_gun/node = SubResource("AnimationNodeAnimation_hq12u")
+states/finger_gun/position = Vector2(382, -2.03278)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o07xb"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_g0vxl"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_4xvow"), "Idle", "finger_gun", SubResource("AnimationNodeStateMachineTransition_b1qqn"), "finger_gun", "Idle", SubResource("AnimationNodeStateMachineTransition_a7x3c")]
+graph_offset = Vector2(0, -42.8115)
 
 [node name="Clover" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
@@ -269,6 +278,7 @@ scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_7vicl")
 hframes = 12
 vframes = 2
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 48)

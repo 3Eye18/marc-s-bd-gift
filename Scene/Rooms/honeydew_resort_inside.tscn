@@ -1,13 +1,16 @@
-[gd_scene load_steps=42 format=3 uid="uid://dbuiwa8lfrgct"]
+[gd_scene load_steps=47 format=3 uid="uid://dbuiwa8lfrgct"]
 
 [ext_resource type="Script" path="res://Script/Rooms/honeydew_resort_inside.gd" id="1_ba26j"]
 [ext_resource type="Texture2D" uid="uid://bdbpgu7hogq" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Snowdin.png" id="2_670vi"]
+[ext_resource type="Script" path="res://Script/Objects/cake_table.gd" id="3_duxud"]
+[ext_resource type="PackedScene" uid="uid://7jkmqpy3acuh" path="res://Scene/UI/interaction_area.tscn" id="3_ogn13"]
 [ext_resource type="Texture2D" uid="uid://uv27siec4bbe" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Honeydew Shopkeeper.png" id="3_r1lnu"]
 [ext_resource type="PackedScene" uid="uid://cfdy22aqktx2n" path="res://Scene/Objects/heater.tscn" id="3_rx8dl"]
 [ext_resource type="PackedScene" uid="uid://76cr5ga0hwo2" path="res://Scene/Objects/dispenser.tscn" id="4_46uly"]
 [ext_resource type="PackedScene" uid="uid://crexlarle5tpk" path="res://Scene/Objects/plant.tscn" id="4_g6o3h"]
 [ext_resource type="PackedScene" uid="uid://c6w05bdcntc8a" path="res://Scene/Characters/martlet.tscn" id="4_ksqr4"]
 [ext_resource type="PackedScene" uid="uid://d1w32oo6s6ql3" path="res://Scene/Characters/ceroba.tscn" id="5_3dbfw"]
+[ext_resource type="Texture2D" uid="uid://11tbuyokvxkp" path="res://Asset/Sprites/PC Computer - Undertale Yellow - Steamworks.png" id="6_5yw1x"]
 [ext_resource type="PackedScene" uid="uid://c3op052tasysx" path="res://Scene/Characters/starlo.tscn" id="6_amtvm"]
 [ext_resource type="PackedScene" uid="uid://bth1x8kh43nkr" path="res://Scene/Characters/dalv.tscn" id="7_tfcmv"]
 [ext_resource type="PackedScene" uid="uid://b7bh03o0iffxo" path="res://Scene/Characters/moray.tscn" id="8_s0o7s"]
@@ -15,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://by1fle6oyyejp" path="res://Scene/Characters/ed.tscn" id="10_2nn2s"]
 [ext_resource type="PackedScene" uid="uid://3whk6erka7of" path="res://Scene/Characters/ace.tscn" id="11_a2mwd"]
 [ext_resource type="PackedScene" uid="uid://c0oy0i2kmd5m2" path="res://Scene/Characters/clover.tscn" id="12_hfsbg"]
+[ext_resource type="AudioStream" uid="uid://cb7ih3cdeo1tr" path="res://Asset/Sounds/after_hours.ogg" id="17_th2hv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn5rn"]
 atlas = ExtResource("2_670vi")
@@ -77,6 +81,10 @@ region = Rect2(2461, 133, 21, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ps2"]
 size = Vector2(21, 30)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffanp"]
+atlas = ExtResource("6_5yw1x")
+region = Rect2(6428, 2, 20, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cn1tg"]
 size = Vector2(62, 3)
 
@@ -126,6 +134,7 @@ position = Vector2(0, 900)
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(29.5, -31)
+script = ExtResource("3_duxud")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="House/Furnitures/Table1"]
@@ -136,6 +145,12 @@ texture = SubResource("AtlasTexture_67rm7")
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_qv6ll")
 debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
+
+[node name="Interaction Area" parent="House/Furnitures/Table1" instance=ExtResource("3_ogn13")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House/Furnitures/Table1/Interaction Area"]
+position = Vector2(0, 6.5)
+polygon = PackedVector2Array(22.6, 0, 0, -18.6, -22.6, 0, 0, 18.6)
 
 [node name="Table2" type="StaticBody2D" parent="House/Furnitures"]
 y_sort_enabled = true
@@ -307,6 +322,12 @@ position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_k0ps2")
 debug_color = Color(0.956603, 0.146023, 0.261794, 0.42)
 
+[node name="Cake" type="Sprite2D" parent="House/Furnitures"]
+texture_filter = 1
+position = Vector2(29.5, -24)
+texture = SubResource("AtlasTexture_ffanp")
+offset = Vector2(0, -20)
+
 [node name="Walls" type="Node2D" parent="House"]
 position = Vector2(0, 900)
 
@@ -390,35 +411,43 @@ scale = Vector2(4, 4)
 [node name="Shopkeeper" type="Sprite2D" parent="NPCs"]
 z_index = 1
 texture_filter = 1
-position = Vector2(127.5, 17.75)
+position = Vector2(136.5, 17.75)
 texture = SubResource("AtlasTexture_yj5jv")
 
 [node name="Martlet" parent="NPCs" instance=ExtResource("4_ksqr4")]
-position = Vector2(-30, 73.25)
+position = Vector2(-21, 72.25)
 
 [node name="Ceroba" parent="NPCs" instance=ExtResource("5_3dbfw")]
 y_sort_enabled = true
-position = Vector2(0, 71.25)
+position = Vector2(9, 71.25)
 
 [node name="Starlo" parent="NPCs" instance=ExtResource("6_amtvm")]
 y_sort_enabled = true
-position = Vector2(31, 70.25)
+position = Vector2(40, 69.25)
 
 [node name="Dalv" parent="NPCs" instance=ExtResource("7_tfcmv")]
 y_sort_enabled = true
-position = Vector2(-110, 124.25)
+position = Vector2(-101, 124.25)
 
 [node name="Moray" parent="NPCs" instance=ExtResource("8_s0o7s")]
-position = Vector2(3, -128.75)
+position = Vector2(12, -128.75)
 
 [node name="Mooch" parent="NPCs" instance=ExtResource("9_a2cn5")]
-position = Vector2(43, -66.75)
+position = Vector2(52, -66.75)
 
 [node name="Ed" parent="NPCs" instance=ExtResource("10_2nn2s")]
-position = Vector2(-85, -69.75)
+position = Vector2(-76, -69.75)
 
 [node name="Ace" parent="NPCs" instance=ExtResource("11_a2mwd")]
-position = Vector2(16, -67.75)
+position = Vector2(25, -67.75)
 
 [node name="Clover" parent="." instance=ExtResource("12_hfsbg")]
 position = Vector2(32, -7)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_th2hv")
+parameters/looping = true

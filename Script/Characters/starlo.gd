@@ -15,7 +15,9 @@ var lines: Array[Dictionary] = [
 	}
 ]
 var interacted: bool = false
+var finger_gun: bool = false
 var direction = Vector2.ZERO
+
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -24,18 +26,20 @@ func _ready():
 
 func _physics_process(delta):
 	velocity = direction * SPEED
+	
+	if interacted and finger_gun:
+		animation_tree.get("parameters/playback").travel("finger_gun")
 
 
 func _on_interact():
-	move("down", 50)
-	#var initial_blend_position = animation_tree.get("parameters/Idle/blend_position")
-	#interacted = true
-	#
-	#DialogueManager.start_dialogue(DialogueManager.bottom_text, lines, speech_sound)
-	#await DialogueManager.dialogue_finished
-	#
-	#interacted = false
-	#animation_tree.set("parameters/Idle/blend_position", initial_blend_position)
+	var initial_blend_position = animation_tree.get("parameters/Idle/blend_position")
+	interacted = true
+	
+	DialogueManager.start_dialogue(DialogueManager.bottom_text, lines, speech_sound)
+	await DialogueManager.dialogue_finished
+	
+	interacted = false
+	animation_tree.set("parameters/Idle/blend_position", initial_blend_position)
 
 
 func move(direction_string: String, distance: float):

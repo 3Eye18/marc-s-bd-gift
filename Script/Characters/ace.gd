@@ -11,7 +11,7 @@ var lines: Array[Dictionary] = [
 		"sprite_name": "ace_normal_2"
 	}
 ]
-var direction = Vector2.ZERO
+
 var interacted: bool = false
 
 

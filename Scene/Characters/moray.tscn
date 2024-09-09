@@ -52,6 +52,7 @@ position = Vector2(8.79169e-07, 0)
 texture = SubResource("AtlasTexture_1tpcc")
 hframes = 7
 script = ExtResource("2_eyhuw")
+metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
