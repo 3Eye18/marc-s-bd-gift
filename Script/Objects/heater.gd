@@ -27,3 +27,4 @@ func _ready():
 func _on_interact():
 	DialogueManager.start_dialogue(DialogueManager.bottom_text, lines, speech_sound)
 	await DialogueManager.dialogue_finished
+	await DialogueManager.dialogue_finishedx

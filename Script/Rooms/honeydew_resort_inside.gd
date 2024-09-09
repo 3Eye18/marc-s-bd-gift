@@ -21,6 +21,17 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#play_cutscene()
+	clover.hardcoded_can_move = true
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func play_cutscene():
 	house.visible = false
 	npc.visible = false
 	timer.start(2)
@@ -202,12 +213,4 @@ func _ready():
 	)
 	await DialogueManager.dialogue_finished
 	ceroba.interacted = false
-	
-	#End
-	clover.hardcoded_can_move = true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 	

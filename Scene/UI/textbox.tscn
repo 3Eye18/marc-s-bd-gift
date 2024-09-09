@@ -1555,7 +1555,7 @@ texture_filter = 1
 position = Vector2(200, 158)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_d21qm")
-animation = &"starlo_oh_2"
+animation = &"martlet_normal_3"
 speed_scale = 1.5
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

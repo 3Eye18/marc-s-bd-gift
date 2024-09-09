@@ -38,7 +38,7 @@ var lines_0: Array[Dictionary] = [
 
 var lines_1: Array[Dictionary] = [
 	{
-		"line": "Say... Clover.",
+		"line": "Say...Clover.",
 		"sprite_name": "starlo_normal_2"
 	},
 	{
@@ -78,12 +78,12 @@ func _on_interact():
 	match interact_count:
 		0:
 			DialogueManager.start_dialogue(DialogueManager.bottom_text, lines_0, speech_sound)
+			interact_count += 1
 		_:
 			DialogueManager.start_dialogue(DialogueManager.bottom_text, lines_1, speech_sound)
 	await DialogueManager.dialogue_finished
 	
 	interacted = false
-	interact_count += 1
 	animation_tree.set("parameters/Idle/blend_position", initial_blend_position)
 
 
