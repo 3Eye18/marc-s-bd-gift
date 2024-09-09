@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var SPEED: float = 300
 @export var first_blend_position = Vector2(0, -1)
 
-var hardcoded_can_move: bool = true
+var hardcoded_can_move: bool = false
 var can_move: bool = true
 var finger_gun: bool = false
 
@@ -36,7 +36,7 @@ func _physics_process(delta):
 		velocity = direction * speed
 		
 		move_and_slide()
-	elif !hardcoded_can_move and !can_move and !finger_gun: 
+	elif !can_move and !finger_gun:
 		animation_tree.get("parameters/playback").travel("Idle")
 	
 	

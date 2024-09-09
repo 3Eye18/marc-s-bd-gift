@@ -21,12 +21,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	clover.hardcoded_can_move = false
 	house.visible = false
 	npc.visible = false
 	timer.start(2)
 	await timer.timeout
 	
+	#Dark room
 	DialogueManager.start_dialogue(
 		DialogueManager.top_text,
 		[
@@ -39,21 +39,120 @@ func _ready():
 	)
 	await DialogueManager.dialogue_finished
 	
+	#Light on
 	sfx.stream = switch_sfx
 	sfx.play()
 	bgm.play()
 	house.visible = true
 	npc.visible = true
 	
+	#Everyone sequence
+	martlet.interacted = true
+	ceroba.interacted = true
+	starlo.interacted = true
+	ed.interacted = true
+	mooch.interacted = true
+	ace.interacted = true
+	dalv.interacted = true
 	DialogueManager.start_dialogue(
-		DialogueManager.top_text,
-		[
+		DialogueManager.bottom_text,
+		[	
+			{"line": "Surprise!", "sprite_name": "none"},
 			{"line": "Happy Birthday, Clover!", "sprite_name": "none"},
 		],
 		everyone_sfx
 	)
 	await DialogueManager.dialogue_finished
+	martlet.interacted = false
+	ceroba.interacted = false
+	starlo.interacted = false
+	ed.interacted = false
+	mooch.interacted = false
+	ace.interacted = false
+	dalv.interacted = false
+
+	#Ceroba
+	ceroba.interacted = true
+	DialogueManager.start_dialogue(
+		DialogueManager.bottom_text,
+		[
+			{"line": "Isn't this great, Clover?", "sprite_name": "ceroba_smile_1"},
+			{"line": "This party is Martlet's idea.", "sprite_name": "ceroba_smile_1"},
+		],
+		ceroba.speech_sound
+	)
+	await DialogueManager.dialogue_finished
+	ceroba.interacted = false
 	
+	#Martlet
+	martlet.interacted = true
+	DialogueManager.start_dialogue(
+		DialogueManager.bottom_text,
+		[
+			{"line": "We don't know how a human's party looks like.", "sprite_name": "martlet_sweat_1"},
+			{"line": "So, I'm sorry if isn't what you expected.", "sprite_name": "martlet_sweat_1"},
+		],
+		martlet.speech_sound
+	)
+	await DialogueManager.dialogue_finished
+	martlet.interacted = false
+	
+	#Starlo
+	starlo.interacted = true
+	DialogueManager.start_dialogue(
+		DialogueManager.bottom_text,
+		[
+			{"line": "Don't worry too much, Feathers.", "sprite_name": "starlo_smile_2"},
+			{"line": "I'm sure our deputy will love it.", "sprite_name": "starlo_smile_2"},
+			{"line": "Plus, we even got to meet Clover's other friends.", "sprite_name": "starlo_smile_2"},
+		],
+		starlo.speech_sound
+	)
+	await DialogueManager.dialogue_finished
+	starlo.interacted = false
+	
+	#Dalv
+	dalv.interacted = true
+	clover.animation_tree.set("parameters/Idle/blend_position", Vector2(-1, 0))
+	DialogueManager.start_dialogue(
+		DialogueManager.bottom_text,
+		[
+			{"line": "Hello, Clover.", "sprite_name": "dalv_smile_2"},
+			{"line": "I see you made a lot of friends.", "sprite_name": "dalv_smile_2"},
+			{"line": "Thanks to you, I get to meet these amazing monsters.", "sprite_name": "dalv_smile_2"},
+			{"line": "Sheriff North Star and his posse did a lot of prep work.", "sprite_name": "dalv_smile_2"},
+		],
+		dalv.speech_sound
+	)
+	await DialogueManager.dialogue_finished
+	clover.animation_tree.set("parameters/Idle/blend_position", Vector2(0, -1))
+	dalv.interacted = false
+	
+	#Edward
+	ed.interacted = true
+	DialogueManager.start_dialogue(
+		DialogueManager.bottom_text,
+		[
+			{"line": "Don't mention it, buddy.", "sprite_name": "ed_happy"},
+		],
+		ed.speech_sound
+	)
+	await DialogueManager.dialogue_finished
+	ed.interacted = false
+	
+	#Mooch
+	mooch.interacted = true
+	DialogueManager.start_dialogue(
+		DialogueManager.bottom_text,
+		[
+			{"line": "Anything for our deputy.", "sprite_name": "mooch_smile"},
+		],
+		mooch.speech_sound
+	)
+	await DialogueManager.dialogue_finished
+	mooch.interacted = false
+	
+	#Finger Gun sequence
 	starlo.interacted = true
 	DialogueManager.start_dialogue(
 		DialogueManager.bottom_text,
@@ -91,79 +190,7 @@ func _ready():
 	starlo.finger_gun = false
 	clover.finger_gun = false
 	
-	ceroba.interacted = true
-	DialogueManager.start_dialogue(
-		DialogueManager.bottom_text,
-		[
-			{"line": "Isn't this great, Clover?", "sprite_name": "ceroba_smile_1"},
-			{"line": "This party is Martlet's idea.", "sprite_name": "ceroba_smile_1"},
-		],
-		ceroba.speech_sound
-	)
-	await DialogueManager.dialogue_finished
-	ceroba.interacted = false
-	
-	martlet.interacted = true
-	DialogueManager.start_dialogue(
-		DialogueManager.bottom_text,
-		[
-			{"line": "We don't know how a human's party looks like.", "sprite_name": "martlet_sweat_1"},
-			{"line": "So, I'm sorry if isn't what you expected.", "sprite_name": "martlet_sweat_1"},
-		],
-		martlet.speech_sound
-	)
-	await DialogueManager.dialogue_finished
-	martlet.interacted = false
-	
-	starlo.interacted = true
-	DialogueManager.start_dialogue(
-		DialogueManager.bottom_text,
-		[
-			{"line": "Don't worry too much, Feathers.", "sprite_name": "starlo_smile_2"},
-			{"line": "I'm sure our deputy will love it.", "sprite_name": "starlo_smile_2"},
-			{"line": "Plus, we even got to meet Clover's other friends.", "sprite_name": "starlo_smile_2"},
-		],
-		starlo.speech_sound
-	)
-	await DialogueManager.dialogue_finished
-	starlo.interacted = false
-	
-	dalv.interacted = true
-	DialogueManager.start_dialogue(
-		DialogueManager.bottom_text,
-		[
-			{"line": "Hello, Clover.", "sprite_name": "dalv_smile_2"},
-			{"line": "I see you made a lot of friends.", "sprite_name": "dalv_smile_2"},
-			{"line": "Thanks to you, I get to meet these amazing monsters.", "sprite_name": "dalv_smile_2"},
-			{"line": "Sheriff North Star and his posse did a lot of prep work.", "sprite_name": "dalv_smile_2"},
-		],
-		dalv.speech_sound
-	)
-	await DialogueManager.dialogue_finished
-	dalv.interacted = false
-	
-	ed.interacted = true
-	DialogueManager.start_dialogue(
-		DialogueManager.bottom_text,
-		[
-			{"line": "Don't mention it, buddy.", "sprite_name": "ed_happy"},
-		],
-		ed.speech_sound
-	)
-	await DialogueManager.dialogue_finished
-	ed.interacted = false
-	
-	mooch.interacted = true
-	DialogueManager.start_dialogue(
-		DialogueManager.bottom_text,
-		[
-			{"line": "Anything for our deputy.", "sprite_name": "mooch_smile"},
-		],
-		mooch.speech_sound
-	)
-	await DialogueManager.dialogue_finished
-	mooch.interacted = false
-	
+	#Ceroba
 	ceroba.interacted = true
 	DialogueManager.start_dialogue(
 		DialogueManager.bottom_text,
@@ -176,6 +203,7 @@ func _ready():
 	await DialogueManager.dialogue_finished
 	ceroba.interacted = false
 	
+	#End
 	clover.hardcoded_can_move = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
