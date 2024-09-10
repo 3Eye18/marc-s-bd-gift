@@ -4,7 +4,6 @@ signal interacted_heater
 
 @export var speech_sound = preload("res://Asset/Sounds/Texts.wav")
 @onready var interaction_area = $"Interaction Area"
-@onready var animation_tree = $AnimationTree
 
 var lines: Array[Dictionary] = [
 	{

@@ -15,25 +15,21 @@ var interact_count: int = 0
 
 var lines_0: Array[Dictionary] = [
 	{
-		"line": "Howdy, Clover. I gotta say...",
+		"line": "What a lively party eh. Clover?",
+		"sprite_name": "starlo_happy"
+	},
+	{
+		"line": "Say, what did ye wish for?",
 		"sprite_name": "starlo_smile_2"
 	},
 	{
-		"line": "Thank ye for movin' in with Ceroba.",
-		"sprite_name": "starlo_normal_2"
-	},
-	{
-		"line": "Havin' to live in the big house alone...",
-		"sprite_name": "starlo_pensive"
-	},
-	{
-		"line": "It must be tough for her.",
-		"sprite_name": "starlo_pensive"
-	},
-	{
-		"line": "But I bet yer company will make things better.",
+		"line": "Actually, nevermind. Whatever it is,",
 		"sprite_name": "starlo_smile_2"
 	},
+	{
+		"line": "it will eventually come true.",
+		"sprite_name": "starlo_smile_2"
+	}
 ]
 
 var lines_1: Array[Dictionary] = [

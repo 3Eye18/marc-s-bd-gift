@@ -18,23 +18,7 @@ var lines_0: Array[Dictionary] = [
 	{
 		"line": "Really? So human's party is a lot like monster's",
 		"sprite_name": "martlet_happy_1"
-	},
-	{
-		"line": "Though, you can't see people on the surface now",
-		"sprite_name": "martlet_sad_2"
-	},
-	{
-		"line": "when it is your birthday.",
-		"sprite_name": "martlet_sad_3"
-	},
-	{
-		"line": "I'm sorry that thing must be like this,",
-		"sprite_name": "martlet_sad_2"
-	},
-	{
-		"line": "but at least you're safe and well.",
-		"sprite_name": "martlet_sad_1"
-	},
+	}
 ]
 
 var lines_1: Array[Dictionary] = [
@@ -43,21 +27,13 @@ var lines_1: Array[Dictionary] = [
 		"sprite_name": "martlet_normal_2"
 	},
 	{
-		"line": "how does it feel to live in such a big mansion?",
+		"line": "tell me more about this \"travel\" UGPS option.",
 		"sprite_name": "martlet_normal_1"
 	},
 	{
-		"line": "I have always wanted a big house.",
-		"sprite_name": "martlet_normal_1"
-	},
-	{
-		"line": "But I'll admit, living alone is lonely sometimes.",
-		"sprite_name": "martlet_normal_2"
-	},
-	{
-		"line": "And it's probably worse if your house is big.",
-		"sprite_name": "martlet_normal_3"
-	},
+		"line": "How does it feel to fly in a cute small basket?",
+		"sprite_name": "martlet_happy_1"
+	}
 ]
 
 var lines_heater: Array[Dictionary] = [
@@ -74,15 +50,7 @@ var lines_heater: Array[Dictionary] = [
 		"sprite_name": "martlet_normal_3"
 	},
 	{
-		"line": "He was a great mentor and a good friend.",
-		"sprite_name": "martlet_sad_1"
-	},
-	{
-		"line": "He didn't have a friendly viewpoint toward humans...",
-		"sprite_name": "martlet_sad_3"
-	},
-	{
-		"line": "But I'm sure you could've change his mind.",
+		"line": "This brings me back some memories.",
 		"sprite_name": "martlet_sad_1"
 	}
 ]
