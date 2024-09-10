@@ -21,6 +21,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$House/Furnitures/Heater.interacted_heater.connect(_on_heater_interacted)
 	#play_cutscene()
 	clover.hardcoded_can_move = true
 	pass
@@ -29,6 +30,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_heater_interacted():
+	martlet.heater_interacted = true
 
 
 func play_cutscene():

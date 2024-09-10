@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal interacted_heater
+
 @export var speech_sound = preload("res://Asset/Sounds/Texts.wav")
 @onready var interaction_area = $"Interaction Area"
 @onready var animation_tree = $AnimationTree
@@ -27,4 +29,4 @@ func _ready():
 func _on_interact():
 	DialogueManager.start_dialogue(DialogueManager.bottom_text, lines, speech_sound)
 	await DialogueManager.dialogue_finished
-	await DialogueManager.dialogue_finishedx
+	interacted_heater.emit()

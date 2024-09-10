@@ -82,7 +82,7 @@ var lines_heater: Array[Dictionary] = [
 		"sprite_name": "martlet_sad_3"
 	},
 	{
-		"line": "But I'm sure you can change his mind.",
+		"line": "But I'm sure you could've change his mind.",
 		"sprite_name": "martlet_sad_1"
 	}
 ]
